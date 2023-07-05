@@ -14,7 +14,7 @@ app.use(express.urlencoded({ extended: false }));
 
 // Salve CORS - OBS: Se de algo errado colocar o endereço da vercel: "https://my-gram-front-end.vercel.app" | OBS: Endereço com vite: "http://localhost:5173" | OBS: Endereço com create-react-app: "http://localhost:3000"
 app.use(
-  cors({ credentials: false, origin: "https://my-gram-front-end.vercel.app" })
+  cors({ credentials: true, origin: "https://my-gram-front-end.vercel.app" })
 );
 
 // DB connection
