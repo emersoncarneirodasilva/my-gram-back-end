@@ -4,7 +4,7 @@ const jwt = require("jsonwebtoken");
 const jwtSecret = process.env.JWT_SECRET;
 
 const authGuard = async (req, res, next) => {
-  const authHeader = req.headers["authorization"];
+  const authHeader = req.headers["*"]; // "authorization"
   const token = authHeader && authHeader.split(" ")[1]; // OBS: O split é para separar a string que vem do token em 2 arrays: "Bearer yfh9iwe9kofwqef" -> [Bearer], [yfh9iwe9kofwqef]
 
   // Check if header has a token

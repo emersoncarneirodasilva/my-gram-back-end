@@ -2,7 +2,7 @@ require("dotenv").config();
 
 const express = require("express");
 const path = require("path");
-// const cors = require("cors");
+const cors = require("cors");
 
 const port = process.env.PORT;
 
@@ -13,9 +13,9 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 
 // Salve CORS - OBS: Se dé algo errado, colocar o endereço da vercel: "https://my-gram-front-end.vercel.app" | OBS: Endereço com vite: "http://localhost:5173" | OBS: Endereço com create-react-app: "http://localhost:3000"
-// app.use(
-//   cors({ credentials: true, origin: "https://my-gram-front-end.vercel.app" })
-// );
+app.use(
+  cors({ credentials: true, origin: "https://my-gram-front-end.vercel.app" })
+);
 
 // DB connection
 require("./config/db.js");
